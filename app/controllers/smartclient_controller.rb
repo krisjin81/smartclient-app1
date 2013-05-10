@@ -1,9 +1,10 @@
+require 'DSResponse'
 class SmartclientController < ApplicationController         
     def index
       
     end
     
-    def fetch
+    def data
       # get all supplyitems from the database
       @supplyItems = Supplyitem.find(:all)
       # get the count of the supplyitems
@@ -18,6 +19,6 @@ class SmartclientController < ApplicationController
       @result = { :response => response }
       
       render json: @result
-    end
+    end 
 end
  
